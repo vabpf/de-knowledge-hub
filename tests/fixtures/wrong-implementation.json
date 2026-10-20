@@ -1,0 +1,6 @@
+{
+  "kind": "relation",
+  "relation": "implementations",
+  "target": "distributed-systems/data-shuffling",
+  "expected": "technology"
+}

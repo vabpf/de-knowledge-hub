@@ -1,0 +1,30 @@
+[project]
+site_name = "Data Engineering Knowledge Hub"
+site_description = "Understand the mechanisms. Design dependable data systems."
+docs_dir = "docs"
+site_dir = "site"
+extra_javascript = ["javascripts/search-readability.js"]
+nav = [
+  { "Start Here" = "index.md" },
+  { "Foundations" = [
+    { "Distributed Computing" = "foundations/distributed-computing.md" },
+  ] },
+  { "Distributed Systems" = [
+    { "Data Partitioning" = "distributed-systems/partitioning.md" },
+    { "Data Shuffling" = "distributed-systems/data-shuffling.md" },
+    { "Data Skew" = "distributed-systems/data-skew.md" },
+  ] },
+  { "Processing" = [
+    { "Apache Spark" = "processing/apache-spark.md" },
+    { "Spark Execution Model" = "processing/spark-execution-model.md" },
+    { "Incremental Data Loading" = "processing/incremental-data-loading.md" },
+  ] },
+  { "Orchestration" = [
+    { "Airflow vs. Dagster" = "orchestration/airflow-vs-dagster.md" },
+  ] },
+]
+
+[project.theme]
+language = "en"
+font = false
+features = ["navigation.sections", "navigation.top", "search.highlight", "content.code.copy"]

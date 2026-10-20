@@ -1,0 +1,17 @@
+[project]
+name = "de-knowledge-hub"
+version = "0.1.0"
+description = "Markdown-first data engineering knowledge hub"
+requires-python = ">=3.12"
+dependencies = ["zensical>=0.0.1,<0.1", "PyYAML>=6.0.2,<7", "jsonschema[format]>=4.23,<5", "markdown-it-py>=3,<5"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+browser = ["playwright>=1.55,<2"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

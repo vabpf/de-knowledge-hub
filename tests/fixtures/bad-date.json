@@ -1,0 +1,6 @@
+{
+  "kind": "metadata",
+  "field": "verified_at",
+  "value": "2026-02-30",
+  "expected": "date"
+}

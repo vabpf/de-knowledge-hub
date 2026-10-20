@@ -1,0 +1,62 @@
+name: Optional private deployment
+on:
+  workflow_dispatch:
+    inputs:
+      approval:
+        description: 'Type DEPLOY PRIVATE HUB after completing design/hosting.md'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: private-wiki-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main' && inputs.approval == 'DEPLOY PRIVATE HUB'
+    runs-on: ubuntu-latest
+    environment: private-wiki
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Require completed private-hosting setup
+        env:
+          ENABLED: ${{ vars.PRIVATE_HOSTING_ENABLED }}
+          HOSTNAME: ${{ vars.CLOUDFLARE_HOSTNAME }}
+          TEAM: ${{ vars.CLOUDFLARE_ACCESS_TEAM_DOMAIN }}
+        run: |
+          test "$ENABLED" = "true"
+          test -n "$HOSTNAME"
+          test -n "$TEAM"
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.6"
+      - run: uv sync --locked
+      - run: uv run python scripts/validate.py
+      - run: uv run pytest
+      - run: uv run zensical build
+      - name: Prepare static-only configuration
+        env:
+          HOSTNAME: ${{ vars.CLOUDFLARE_HOSTNAME }}
+        run: uv run python scripts/prepare_cloudflare.py --hostname "$HOSTNAME"
+      - name: Check Access before uploading private content
+        env:
+          HOSTNAME: ${{ vars.CLOUDFLARE_HOSTNAME }}
+          TEAM: ${{ vars.CLOUDFLARE_ACCESS_TEAM_DOMAIN }}
+        run: uv run python scripts/check_private.py --base-url "https://$HOSTNAME" --team-domain "$TEAM"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Deploy explicitly approved static assets
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.136.3"
+          command: deploy --config wrangler.local.json
+      - name: Recheck unauthenticated access after deployment
+        env:
+          HOSTNAME: ${{ vars.CLOUDFLARE_HOSTNAME }}
+          TEAM: ${{ vars.CLOUDFLARE_ACCESS_TEAM_DOMAIN }}
+        run: uv run python scripts/check_private.py --base-url "https://$HOSTNAME" --team-domain "$TEAM"

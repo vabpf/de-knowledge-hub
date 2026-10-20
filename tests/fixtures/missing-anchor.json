@@ -1,0 +1,5 @@
+{
+  "kind": "append",
+  "value": "[Missing](partitioning.md#no-such-heading)",
+  "expected": "anchor"
+}

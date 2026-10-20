@@ -1,0 +1,5 @@
+{
+  "kind": "append",
+  "value": "![Missing](missing.png)",
+  "expected": "broken"
+}

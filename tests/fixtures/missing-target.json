@@ -1,0 +1,6 @@
+{
+  "kind": "relation",
+  "relation": "related",
+  "target": "distributed-systems/missing",
+  "expected": "missing target"
+}

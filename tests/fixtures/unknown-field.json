@@ -1,0 +1,6 @@
+{
+  "kind": "metadata",
+  "field": "invented",
+  "value": true,
+  "expected": "Additional properties"
+}

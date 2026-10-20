@@ -1,0 +1,5 @@
+{
+  "kind": "append",
+  "value": "[Private](../../drafts/secret.md)",
+  "expected": "unpublished"
+}

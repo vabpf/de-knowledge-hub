@@ -1,0 +1,6 @@
+{
+  "kind": "relation",
+  "relation": "prerequisites",
+  "target": "distributed-systems/data-shuffling",
+  "expected": "cycle"
+}

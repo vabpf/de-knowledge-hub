@@ -1,0 +1,6 @@
+{
+  "kind": "metadata",
+  "field": "title",
+  "delete": true,
+  "expected": "required property"
+}

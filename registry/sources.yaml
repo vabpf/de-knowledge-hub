@@ -1,0 +1,62 @@
+version: 1
+sources:
+- id: mapreduce-paper
+  title: 'MapReduce: Simplified Data Processing on Large Clusters'
+  url: https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/
+  version: OSDI 2004
+  verified_at: '2026-10-19'
+- id: spark-rdd
+  title: Spark RDD Programming Guide
+  url: https://spark.apache.org/docs/3.5.7/rdd-programming-guide.html
+  version: 3.5.7
+  verified_at: '2026-10-19'
+- id: spark-cluster
+  title: Spark Cluster Mode Overview
+  url: https://spark.apache.org/docs/3.5.7/cluster-overview.html
+  version: 3.5.7
+  verified_at: '2026-10-19'
+- id: spark-sql
+  title: Spark SQL Getting Started
+  url: https://spark.apache.org/docs/3.5.7/sql-getting-started.html
+  version: 3.5.7
+  verified_at: '2026-10-19'
+- id: spark-tuning
+  title: Spark SQL Performance Tuning
+  url: https://spark.apache.org/docs/3.5.7/sql-performance-tuning.html
+  version: 3.5.7
+  verified_at: '2026-10-19'
+- id: postgres-insert
+  title: PostgreSQL INSERT and ON CONFLICT
+  url: https://www.postgresql.org/docs/16/sql-insert.html
+  version: '16'
+  verified_at: '2026-10-19'
+- id: postgres-decoding
+  title: PostgreSQL Logical Decoding Concepts
+  url: https://www.postgresql.org/docs/16/logicaldecoding-explanation.html
+  version: '16'
+  verified_at: '2026-10-19'
+- id: postgres-isolation
+  title: PostgreSQL Transaction Isolation
+  url: https://www.postgresql.org/docs/16/transaction-iso.html
+  version: '16'
+  verified_at: '2026-10-19'
+- id: airflow-dags
+  title: Airflow Dags
+  url: https://airflow.apache.org/docs/apache-airflow/3.1.0/core-concepts/dags.html
+  version: 3.1.0
+  verified_at: '2026-10-19'
+- id: airflow-assets
+  title: Airflow Asset Definitions
+  url: https://airflow.apache.org/docs/apache-airflow/3.1.0/authoring-and-scheduling/assets.html
+  version: 3.1.0
+  verified_at: '2026-10-19'
+- id: dagster-assets
+  title: Dagster Defining Assets
+  url: https://dagster.io/docs/guides/build/assets/defining-assets
+  version: 1.13.26 documentation observed 2026-10-19
+  verified_at: '2026-10-19'
+- id: dagster-partitions
+  title: Dagster Partitions and Backfills
+  url: https://dagster.io/docs/guides/build/partitions-and-backfills
+  version: 1.13.26 documentation observed 2026-10-19
+  verified_at: '2026-10-19'

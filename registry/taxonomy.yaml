@@ -1,0 +1,18 @@
+version: 1
+domains:
+- foundations
+- databases
+- distributed-systems
+- data-modeling
+- processing
+- orchestration
+- cloud
+- architecture
+- troubleshooting
+tags:
+- distributed-systems
+- data-processing
+- performance
+- spark
+- reliability
+- orchestration

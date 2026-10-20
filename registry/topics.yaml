@@ -1,0 +1,186 @@
+version: 1
+topics:
+- id: distributed-systems/partitioning
+  title: Data Partitioning
+  type: concept
+  status: published
+  difficulty: beginner
+  tags:
+  - distributed-systems
+  - data-processing
+  prerequisites:
+  - foundations/distributed-computing
+  related:
+  - distributed-systems/data-shuffling
+  implementations:
+  - processing/apache-spark
+  path: docs/distributed-systems/partitioning.md
+  priority: high
+- id: distributed-systems/data-shuffling
+  title: Data Shuffling
+  type: mechanism
+  status: published
+  difficulty: intermediate
+  tags:
+  - distributed-systems
+  - data-processing
+  - performance
+  prerequisites:
+  - distributed-systems/partitioning
+  related:
+  - distributed-systems/partitioning
+  implementations: []
+  path: docs/distributed-systems/data-shuffling.md
+  priority: high
+- id: foundations/distributed-computing
+  title: Distributed Computing
+  type: concept
+  status: published
+  difficulty: beginner
+  tags:
+  - distributed-systems
+  prerequisites: []
+  related:
+  - distributed-systems/partitioning
+  - processing/apache-spark
+  implementations: []
+  path: docs/foundations/distributed-computing.md
+  priority: high
+- id: processing/apache-spark
+  title: Apache Spark
+  type: technology
+  status: published
+  difficulty: beginner
+  tags:
+  - distributed-systems
+  - data-processing
+  - spark
+  prerequisites:
+  - foundations/distributed-computing
+  - distributed-systems/partitioning
+  related:
+  - processing/spark-execution-model
+  - distributed-systems/data-shuffling
+  implementations: []
+  path: docs/processing/apache-spark.md
+  priority: high
+- id: processing/spark-execution-model
+  title: Spark Execution Model
+  type: mechanism
+  status: published
+  difficulty: intermediate
+  tags:
+  - spark
+  - data-processing
+  - performance
+  prerequisites:
+  - processing/apache-spark
+  - distributed-systems/data-shuffling
+  related:
+  - distributed-systems/data-skew
+  - processing/incremental-data-loading
+  implementations: []
+  path: docs/processing/spark-execution-model.md
+  priority: high
+- id: distributed-systems/data-skew
+  title: Data Skew
+  type: problem
+  status: published
+  difficulty: intermediate
+  tags:
+  - distributed-systems
+  - performance
+  - spark
+  prerequisites:
+  - distributed-systems/partitioning
+  - distributed-systems/data-shuffling
+  related:
+  - processing/spark-execution-model
+  - processing/incremental-data-loading
+  implementations: []
+  path: docs/distributed-systems/data-skew.md
+  priority: high
+- id: processing/incremental-data-loading
+  title: Incremental Data Loading
+  type: pattern
+  status: published
+  difficulty: intermediate
+  tags:
+  - data-processing
+  - reliability
+  prerequisites:
+  - foundations/distributed-computing
+  related:
+  - orchestration/airflow-vs-dagster
+  - processing/apache-spark
+  implementations: []
+  path: docs/processing/incremental-data-loading.md
+  priority: high
+- id: orchestration/airflow-vs-dagster
+  title: Airflow vs. Dagster
+  type: comparison
+  status: published
+  difficulty: intermediate
+  tags:
+  - orchestration
+  - data-processing
+  prerequisites:
+  - processing/incremental-data-loading
+  related:
+  - processing/apache-spark
+  - processing/spark-execution-model
+  implementations: []
+  path: docs/orchestration/airflow-vs-dagster.md
+  priority: high
+- id: processing/spark-shuffle
+  title: Spark Shuffle
+  type: concept
+  status: planned
+  difficulty: intermediate
+  tags:
+  - data-processing
+  prerequisites:
+  - processing/spark-execution-model
+  related: []
+  implementations: []
+  path: null
+  priority: medium
+- id: processing/adaptive-query-execution
+  title: Adaptive Query Execution
+  type: concept
+  status: planned
+  difficulty: intermediate
+  tags:
+  - data-processing
+  prerequisites:
+  - processing/spark-execution-model
+  - distributed-systems/data-skew
+  related: []
+  implementations: []
+  path: null
+  priority: medium
+- id: databases/change-data-capture
+  title: Change Data Capture
+  type: concept
+  status: planned
+  difficulty: intermediate
+  tags:
+  - data-processing
+  prerequisites:
+  - processing/incremental-data-loading
+  related: []
+  implementations: []
+  path: null
+  priority: medium
+- id: data-modeling/dimensional-modeling
+  title: Dimensional Modeling
+  type: concept
+  status: planned
+  difficulty: intermediate
+  tags:
+  - data-processing
+  prerequisites: []
+  related: []
+  implementations: []
+  path: null
+  priority: medium

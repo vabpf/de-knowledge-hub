@@ -1,0 +1,6 @@
+{
+  "kind": "metadata",
+  "field": "difficulty",
+  "value": "advanced",
+  "expected": "differs from registry"
+}

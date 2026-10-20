@@ -1,0 +1,25 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+site/
+.cache/
+.zensical/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+inventory.json
+
+# Optional hosting and browser review
+wrangler.local.json
+.wrangler/
+browser-results/
+node_modules/
+
+.dev.vars
+.dev.vars.*
